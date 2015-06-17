@@ -1,13 +1,12 @@
 package main
 
-type Resource interface{}
+import "github.com/zemirco/couchdb"
 
+// A single user
 type User struct {
-	Name     string `json:"name"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
-}
+	couchdb.Document
 
-func NewUser(name, email, password string) *User {
-	return &User{Name: name, Email: email, Password: password}
+	Firstname string `json:"firstname"`
+	Name      string `json:"name"`
+	Email     string `json:"email"`
 }
